@@ -10,3 +10,6 @@ class TestStringCalculator(unittest.TestCase):
     
     def test_two_numbers_comma_delimited_returns_sum(self):
         self.assertEqual(3,add("1,2"))
+
+    def test_newlines_between_numbers(self):
+        self.assertEqual(6,add("1\n2,3"))
