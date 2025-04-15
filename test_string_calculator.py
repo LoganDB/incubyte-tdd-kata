@@ -13,3 +13,6 @@ class TestStringCalculator(unittest.TestCase):
 
     def test_newlines_between_numbers(self):
         self.assertEqual(6,add("1\n2,3"))
+
+    def test_custom_delimiter(self):
+        self.assertEqual(3,add("//;\n1;2"))
