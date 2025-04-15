@@ -20,3 +20,8 @@ class TestStringCalculator(unittest.TestCase):
     def test_negative_number_throws_exception(self):
         with self.assertRaises(ValueError):
             add("-1,2")
+        
+    def test_multiple_negatives_in_exception(self):
+        with self.assertRaises(ValueError) as err:
+            add ("-1,-2,3")
+        self.assertEqual("negative numbers not allowed -1,-2",str(err.exception))
