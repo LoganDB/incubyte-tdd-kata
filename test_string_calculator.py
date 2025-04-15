@@ -16,3 +16,7 @@ class TestStringCalculator(unittest.TestCase):
 
     def test_custom_delimiter(self):
         self.assertEqual(3,add("//;\n1;2"))
+    
+    def test_negative_number_throws_exception(self):
+        with self.assertRaises(ValueError):
+            add("-1,2")
