@@ -7,7 +7,7 @@ def add(numbers):
         numbers=numbers[4:]
     nums=numbers.replace('\n',delimiter).split(delimiter)
     numbers_list=[int(num) for num in nums]
-    negatives=[num for num in numbers_list if num < 0]
+    negatives=[str(num) for num in numbers_list if num < 0]
     if negatives:
-        raise ValueError(f"negative numbers not allowed {negatives[0]}")
+        raise ValueError(f"negative numbers not allowed {','.join(negatives)}")
     return sum (numbers_list)
